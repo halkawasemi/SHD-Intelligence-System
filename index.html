@@ -153,9 +153,9 @@
                                 </div>
                                 <div class="isac-panel p-4 border border-white/5 hover:border-isac-orange/50 transition-colors">
                                     <h3 class="text-xs font-isac text-isac-orange/80 mb-3">CURRENT MUTATORS</h3>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="text-[9px] bg-red-500/20 text-red-400 border border-red-500/30 px-2 py-1">HARVESTER</span>
-                                        <span class="text-[9px] bg-red-500/20 text-red-400 border border-red-500/30 px-2 py-1">SUPPRESSOR</span>
+                                    <div id="current-mutators" class="flex flex-wrap gap-2">
+                                        <!-- Dynamic Content: data/modes.json -->
+                                        <span class="text-[9px] text-isac-text/20 italic">SCANNING...</span>
                                     </div>
                                 </div>
                             </div>
@@ -176,22 +176,10 @@
                             </section>
 
                             <section class="isac-panel p-4 border border-isac-orange/20">
-                                <h3 class="font-isac text-sm text-isac-orange mb-4">COMMUNITY TOP META</h3>
-                                <div class="space-y-3">
-                                    <div class="group cursor-pointer">
-                                        <div class="flex justify-between text-xs font-bold group-hover:text-isac-orange">
-                                            <span>[S1] Central Park Striker</span>
-                                            <span class="text-isac-orange">▲ 412</span>
-                                        </div>
-                                        <div class="text-[9px] text-isac-text/40">By Agent_Keener2026 / Escalation Tier 10</div>
-                                    </div>
-                                    <div class="group cursor-pointer">
-                                        <div class="flex justify-between text-xs font-bold group-hover:text-isac-orange">
-                                            <span>Realism Survival Tank</span>
-                                            <span class="text-isac-orange">▲ 285</span>
-                                        </div>
-                                        <div class="text-[9px] text-isac-text/40">By iKia_Division / Survival Mode</div>
-                                    </div>
+                                <h3 class="font-isac text-sm text-isac-orange mb-4">LATEST EXOTICS (Y8S1)</h3>
+                                <div id="top-exotics" class="space-y-3">
+                                    <!-- Dynamic Content: data/exotics.json -->
+                                    <div class="text-[9px] text-isac-text/20 italic">DECRYPTING...</div>
                                 </div>
                             </section>
                         </div>
