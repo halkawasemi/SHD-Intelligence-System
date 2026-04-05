@@ -1,0 +1,32 @@
+{
+  "modes": [
+    {
+      "id": "escalation",
+      "name": "エスカレーション (Escalation)",
+      "description": "Tier 1-10の難易度スケーリングを持つエンドゲームチャレンジ。チェックポイントなしの1回勝負。",
+      "requirements": "エスカレーショントークンが必要",
+      "mutators": [
+        { "name": "Harvester", "effect": "プレイヤーのアーマーを基準に敵が回復" },
+        { "name": "Suppressor", "effect": "定期的にEMPを放ちスキルを妨害" }
+      ],
+      "rewards": "プロトタイプギア, エスカレーション限定パッチ"
+    },
+    {
+      "id": "retaliation_v8",
+      "name": "リタリエーション: ブラックタスクの猛威",
+      "description": "コントロールポイントを奪取するブラックタスクの侵攻を阻止するモード。",
+      "features": [
+        { "name": "Agitation Overclock", "effect": "メーターを最大300%蓄積し、連続発生が可能" },
+        { "name": "BTSU Team 9", "effect": "イベント中に乱入するエリート部隊。討伐でエキゾチック設計図ドロップ" }
+      ],
+      "rewards": "レイド/DZ限定エキゾチック設計図 (確率)"
+    },
+    {
+      "id": "classified_assignments_r2",
+      "name": "クラシファイド任務: Library of Congress Retrieval",
+      "description": "議会図書館での探索ミッション。第1弾が現在プレイ可能。",
+      "next_unlock": "2026-05-12 (第2弾)",
+      "rewards": "限定バックパックトロフィー, ロア収集物"
+    }
+  ]
+}

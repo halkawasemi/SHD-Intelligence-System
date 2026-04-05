@@ -1,0 +1,25 @@
+{
+  "exotics": [
+    {
+      "id": "agitator",
+      "name": "Agitator (アジテーター)",
+      "category": "Assault Rifle",
+      "talent": "収納中にパワー蓄積。抜刀後10秒間、武器ダメージ+50%",
+      "drop_source": "エスカレーション Tier 7以上"
+    },
+    {
+      "id": "whiplash",
+      "name": "Whiplash (ウィップラッシュ)",
+      "category": "Pistol",
+      "talent": "精密射撃成功時、次に使用するスキルのクールダウンをリセット",
+      "drop_source": "シーズンクライマックスミッション初回クリア確定ドロップ"
+    },
+    {
+      "id": "investor",
+      "name": "Investor (インベスター)",
+      "category": "Mask",
+      "talent": "装備中のコア特性の色(赤/青/黄)が最も多い色に応じて、全攻撃力/全防御力/全スキル効率を大幅強化",
+      "drop_source": "リタリエーション報酬"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "gear_sets": [
+    {
+      "id": "core_strength",
+      "name": "Core Strength (コアストレングス)",
+      "type": "Gear Set",
+      "bonuses": [
+        { "pieces": 2, "effect": "+15% 武器ダメージ" },
+        { "pieces": 3, "effect": "+20% アーマー" },
+        { "pieces": 4, "effect": "コア特性ボーナスをチームメイトと共有。自身のコア配分に応じてバフが増幅する。" }
+      ],
+      "prototype_compatible": true
+    }
+  ],
+  "brands": [
+    {
+      "id": "royal_works",
+      "name": "Royal Works (ロイヤルワークス)",
+      "bonuses": [
+        { "rank": 1, "effect": "+10% 武器ハンドリング" },
+        { "rank": 2, "effect": "+15% クリティカル率" },
+        { "rank": 3, "effect": "+20% クリティカルダメージ" }
+      ]
+    }
+  ],
+  "prototype_system": {
+    "stat_multiplier": 1.5,
+    "upgrade_condition": "Expertise Level 30",
+    "cost_reduction": "エキゾチック素材 -50%",
+    "augments": [
+      { "name": "Quantum Augment", "effect": "弾薬の自動補充" },
+      { "name": "Echo Augment", "effect": "攻撃時にランダムなステータス異常を付与" },
+      { "name": "Atomize Augment", "effect": "スキルによる爆発ダメージの連鎖" }
+    ]
+  }
+}
