@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHD Intelligence System | SIS v0.0.1 (Year 8)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'isac-orange': '#FF8C00',
+                        'isac-dark': '#0A0A0A',
+                        'isac-gray': '#1E1E1E',
+                        'isac-text': '#E0E0E0',
+                        'proto-blue': '#00D1FF',
+                    },
+                    fontFamily: {
+                        'isac': ['Orbitron', 'sans-serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-isac-dark text-isac-text font-body overflow-hidden">
+    <div class="scanline"></div>
+
+    <div class="flex h-screen border-isac-orange/30 border-t-2">
+        <!-- Sidebar: Extended for Year 8 Navigation -->
+        <aside class="w-72 bg-isac-gray/80 backdrop-blur-lg border-r border-isac-orange/20 flex flex-col z-10">
+            <div class="p-6 border-b border-isac-orange/20 bg-isac-orange/5">
+                <h1 class="font-isac text-xl text-isac-orange font-bold tracking-widest">SHD SIS</h1>
+                <p class="text-[10px] text-isac-orange/60 mt-1 uppercase font-isac">Year 8 / Rise Up / Central Park</p>
+            </div>
+            
+            <nav class="flex-1 mt-4 px-2 space-y-1 overflow-y-auto">
+                <div class="text-[10px] text-isac-orange/40 font-isac px-4 pb-2">Main Intel</div>
+                <a href="#" class="flex items-center px-4 py-2 text-isac-orange bg-isac-orange/10 border-l-2 border-isac-orange font-bold group text-sm">
+                    DASHBOARD
+                </a>
+                
+                <div class="text-[10px] text-isac-orange/40 font-isac px-4 pt-4 pb-2">Systems</div>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/5 hover:text-isac-orange border-l-2 border-transparent transition-all text-sm group">
+                    PROTOTYPE GEAR <span class="ml-2 text-[8px] px-1 bg-proto-blue/20 text-proto-blue border border-proto-blue/30 rounded">NEW</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/5 hover:text-isac-orange border-l-2 border-transparent transition-all text-sm">
+                    RECOMBINANT CALC
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/5 hover:text-isac-orange border-l-2 border-transparent transition-all text-sm">
+                    BUILD SIMULATOR
+                </a>
+                
+                <div class="text-[10px] text-isac-orange/40 font-isac px-4 pt-4 pb-2">Missions</div>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/5 hover:text-isac-orange border-l-2 border-transparent transition-all text-sm group">
+                    ESCALATION TIER <span class="ml-auto text-xs text-red-500 animate-pulse">!</span>
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/5 hover:text-isac-orange border-l-2 border-transparent transition-all text-sm">
+                    SURVIVORS INTEL
+                </a>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/5 hover:text-isac-orange border-l-2 border-transparent transition-all text-sm">
+                    REALISM MODE GUIDE
+                </a>
+                
+                <div class="text-[10px] text-isac-orange/40 font-isac px-4 pt-4 pb-2">Network</div>
+                <a href="#" class="flex items-center px-4 py-2 hover:bg-white/5 hover:text-isac-orange border-l-2 border-transparent transition-all text-sm">
+                    AGENT PROFILE (API)
+                </a>
+            </nav>
+
+            <div class="p-4 border-t border-isac-orange/20 text-[10px] text-isac-orange/40 font-mono">
+                <div class="flex justify-between">
+                    <span>SYSTEM STATUS</span>
+                    <span class="text-green-500">OPERATIONAL</span>
+                </div>
+                <div class="mt-1 flex justify-between uppercase">
+                    <span>Target Area</span>
+                    <span>Central Park</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col relative bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+            <!-- Header: Interactive Status Bar -->
+            <header class="h-14 bg-isac-gray/90 backdrop-blur-md border-b border-isac-orange/20 flex items-center justify-between px-8 z-10">
+                <div class="flex items-center space-x-6">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-isac-orange animate-ping h-2 w-2 rounded-full bg-isac-orange absolute opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-isac-orange"></span>
+                        <span class="text-xs font-isac tracking-widest text-isac-orange">Live Feed</span>
+                    </div>
+                    <!-- Bug Tracker Warning (Mock) -->
+                    <div class="hidden md:flex items-center bg-red-900/30 border border-red-500/50 px-3 py-1 rounded-sm">
+                        <span class="text-[10px] text-red-400 font-bold">WARNING: KNOWN BUG IN CORE STRENGTH 4PC EFFECT</span>
+                    </div>
+                </div>
+                <div class="text-xs font-mono text-isac-orange/60 flex items-center space-x-4">
+                    <span>ISAC_V8.1.0</span>
+                    <span id="clock">12:00:00</span>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div id="app-container" class="flex-1 overflow-y-auto p-6 lg:p-10">
+                <div class="max-w-6xl mx-auto space-y-8">
+                    <!-- Dashboard Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Left: Major Alerts / Current Season -->
+                        <div class="lg:col-span-2 space-y-6">
+                            <section class="isac-panel p-6 border-l-4 border-isac-orange">
+                                <h2 class="font-isac text-2xl text-isac-orange mb-2">Operation: Rise Up</h2>
+                                <p class="text-sm text-isac-text/70 mb-4">
+                                    セントラルパークでのBTSUの活動が激化。Prototype Gearのドロップ率がエスカレーション Tier 5以上で20%上昇中です。
+                                </p>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div class="bg-isac-orange/10 border border-isac-orange/20 p-2 text-center">
+                                        <div class="text-[10px] text-isac-orange/60">NEXT REW.</div>
+                                        <div class="text-xs font-bold">AGITATOR</div>
+                                    </div>
+                                    <div class="bg-isac-orange/10 border border-isac-orange/20 p-2 text-center">
+                                        <div class="text-[10px] text-isac-orange/60">MANHUNT</div>
+                                        <div class="text-xs font-bold">TRACKING</div>
+                                    </div>
+                                    <div class="bg-isac-orange/10 border border-isac-orange/20 p-2 text-center">
+                                        <div class="text-[10px] text-isac-orange/60">TIER</div>
+                                        <div class="text-xs font-bold">ESCALATION 8</div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Data Grid (Year 8 Show All Concept) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="isac-panel p-4 border border-white/5 hover:border-isac-orange/50 transition-colors">
+                                    <h3 class="text-xs font-isac text-isac-orange/80 mb-3">VENDOR RESET TRACKER</h3>
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between text-[11px] border-b border-white/5 pb-1">
+                                            <span>Base of Operations</span>
+                                            <span class="text-isac-orange">1d 04h left</span>
+                                        </div>
+                                        <div class="flex justify-between text-[11px] border-b border-white/5 pb-1">
+                                            <span>The Castle (Prototype Special)</span>
+                                            <span class="text-proto-blue">NEW ITEMS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="isac-panel p-4 border border-white/5 hover:border-isac-orange/50 transition-colors">
+                                    <h3 class="text-xs font-isac text-isac-orange/80 mb-3">CURRENT MUTATORS</h3>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="text-[9px] bg-red-500/20 text-red-400 border border-red-500/30 px-2 py-1">HARVESTER</span>
+                                        <span class="text-[9px] bg-red-500/20 text-red-400 border border-red-500/30 px-2 py-1">SUPPRESSOR</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right: Quick Links / Meta Builds -->
+                        <div class="space-y-6">
+                            <section class="isac-panel p-4 border border-proto-blue/30">
+                                <h3 class="font-isac text-sm text-proto-blue mb-4 flex items-center">
+                                    <span class="mr-2">⚡</span> PROTOTYPE ANALYZER
+                                </h3>
+                                <div class="bg-black/40 p-3 text-xs text-isac-text/60 italic border-l border-proto-blue/50">
+                                    "Prototype Gear の特性上限(1.5x)とAugments効果をシミュレートするには、装備をロードしてください。"
+                                </div>
+                                <button class="w-full mt-4 py-2 bg-proto-blue/10 border border-proto-blue/40 text-proto-blue font-isac text-[10px] hover:bg-proto-blue/20 transition-all">
+                                    ACTIVATE SCANNER
+                                </button>
+                            </section>
+
+                            <section class="isac-panel p-4 border border-isac-orange/20">
+                                <h3 class="font-isac text-sm text-isac-orange mb-4">COMMUNITY TOP META</h3>
+                                <div class="space-y-3">
+                                    <div class="group cursor-pointer">
+                                        <div class="flex justify-between text-xs font-bold group-hover:text-isac-orange">
+                                            <span>[S1] Central Park Striker</span>
+                                            <span class="text-isac-orange">▲ 412</span>
+                                        </div>
+                                        <div class="text-[9px] text-isac-text/40">By Agent_Keener2026 / Escalation Tier 10</div>
+                                    </div>
+                                    <div class="group cursor-pointer">
+                                        <div class="flex justify-between text-xs font-bold group-hover:text-isac-orange">
+                                            <span>Realism Survival Tank</span>
+                                            <span class="text-isac-orange">▲ 285</span>
+                                        </div>
+                                        <div class="text-[9px] text-isac-text/40">By iKia_Division / Survival Mode</div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Footer Status Bar -->
+            <footer class="h-8 bg-isac-orange border-t border-isac-orange/50 flex items-center px-4 overflow-hidden z-10">
+                <div class="whitespace-nowrap animate-marquee text-[10px] text-black font-bold uppercase tracking-widest">
+                    SYSTEM_MESSAGE: AGENT PROFILE SYNC ACTIVE // INTEL: BTSU TEAM 9 SIGHTED IN CENTRAL PARK LANDMARKS // CLIMATE: SEVERE SNOWSTORM IN 15 MINUTES - PREPARE THERMAL GEAR // 
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="assets/js/ui.js" type="module"></script>
+    <script src="assets/js/app.js" type="module"></script>
+</body>
+</html>
