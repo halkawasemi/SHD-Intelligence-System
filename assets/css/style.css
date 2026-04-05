@@ -1,0 +1,102 @@
+/* SHD Intelligence System - Custom Styles (Year 8 Edition) */
+
+:root {
+    --isac-orange: #FF8C00;
+    --isac-orange-dim: rgba(255, 140, 0, 0.2);
+    --isac-dark: #0A0A0A;
+    --isac-gray: #1E1E1E;
+    --isac-light: #E0E0E0;
+    
+    /* Year 8 Prototype Gear Colors */
+    --quantum-blue: #00D1FF;
+    --echo-green: #00FF94;
+    --atomize-purple: #BD00FF;
+    
+    /* Escalation Difficulty Colors */
+    --tier-low: #00FF00;
+    --tier-mid: #FFFF00;
+    --tier-high: #FF0000;
+    --tier-legendary: #FF00FF;
+}
+
+body {
+    background-color: var(--isac-dark);
+    color: var(--isac-light);
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    letter-spacing: 0.02em;
+}
+
+.font-isac {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* Scanline Effect */
+.scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 99;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 140, 0, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+}
+
+/* UI Elements */
+.isac-border {
+    border: 1px solid var(--isac-orange-dim);
+}
+
+.isac-border-focus {
+    border: 1px solid var(--isac-orange);
+    box-shadow: 0 0 10px var(--isac-orange-dim);
+}
+
+.isac-panel {
+    background: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--isac-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--isac-orange-dim);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--isac-orange);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+}
+
+/* Prototype Gear Glitch Effect (Optional/Subtle) */
+.prototype-glow {
+    text-shadow: 0 0 5px var(--quantum-blue);
+}
