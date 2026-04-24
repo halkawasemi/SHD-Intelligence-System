@@ -1,37 +1,39 @@
-/**
- * SHD Intelligence System - Main Application Logic
- */
-
-import { UI } from './ui.js';
-
-class SISApp {
+// DataService.js (新規想定)
+export class DataService {
     constructor() {
-        this.version = "0.0.1";
-        this.isReady = false;
+        // スプレッドシートのCSV出力URL (Weaponsタブの例)
+        this.SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-...-yEfL/pub?gid=2130349603&output=csv";
     }
 
-    async init() {
-        console.log(`Initializing SIS v${this.version}...`);
-        
-        // UI初期化
-        UI.init();
-
-        // 将来的なデータロード
+    async fetchWeapons() {
         try {
-            await this.loadInitialData();
-            this.isReady = true;
-            console.log("System Ready. All Intel loaded.");
+            const response = await fetch(this.SHEET_URL);
+            const csvText = await response.text();
+            return this.parseCSV(csvText);
         } catch (error) {
-            console.error("System Initialization Failed:", error);
+            console.error("Intel Acquisition Failed:", error);
+            return [];
         }
     }
 
-    async loadInitialData() {
-        // プレースホルダー: data/*.json からのフェッチを想定
-        return new Promise(resolve => setTimeout(resolve, 500));
+    parseCSV(csv) {
+        // CSVパースロジック（簡易版）
+        const lines = csv.split('\n');
+        const headers = lines[0].split(',');
+        return lines.slice(1).map(line => {
+            const values = line.split(',');
+            return headers.reduce((obj, header, i) => {
+                obj[header.trim()] = values[i]?.trim();
+                return obj;
+            }, {});
+        });
     }
 }
 
-// アプリケーション起動
-const app = new SISApp();
-document.addEventListener('DOMContentLoaded', () => app.init());
+// app.js での利用
+import { DataService } from './DataService.js';
+
+// init内での呼び出し例
+const dataService = new DataService();
+const weaponIntel = await dataService.fetchWeapons();
+console.log(`Detected ${weaponIntel.length} weapons in field manual.`);
