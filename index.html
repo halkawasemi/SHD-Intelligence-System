@@ -184,6 +184,40 @@
                             </section>
                         </div>
                     </div>
+
+                    <!-- Escalation Tier Damage Estimator -->
+                    <section class="isac-panel p-6 border-l-4 border-red-600/80">
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-5">
+                            <h2 class="font-isac text-base text-isac-orange tracking-widest">WEAPON DAMAGE ESTIMATOR</h2>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-[10px] text-isac-text/50 font-isac">ESCALATION TIER</span>
+                                <span id="tier-display"
+                                    class="font-isac text-3xl font-bold"
+                                    style="color: var(--tier-low); text-shadow: 0 0 10px currentColor;">1</span>
+                                <span id="tier-label"
+                                    class="text-[10px] font-isac px-2 py-0.5 border rounded"
+                                    style="color: var(--tier-low); border-color: var(--tier-low);">LOW</span>
+                            </div>
+                        </div>
+
+                        <!-- Slider -->
+                        <div class="mb-6 px-1">
+                            <input type="range" id="tier-slider" min="1" max="10" value="1" class="tier-slider" aria-label="Escalation Tier" />
+                            <div class="flex justify-between text-[9px] text-isac-text/30 font-mono mt-2">
+                                <span>TIER 1</span>
+                                <span>TIER 3</span>
+                                <span>TIER 5</span>
+                                <span>TIER 7</span>
+                                <span>TIER 9</span>
+                                <span>TIER 10</span>
+                            </div>
+                        </div>
+
+                        <!-- Weapon Cards -->
+                        <div id="weapon-cards" class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                            <!-- Populated by app.js -->
+                        </div>
+                    </section>
                 </div>
             </div>
 
