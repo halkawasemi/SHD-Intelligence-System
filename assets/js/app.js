@@ -41,8 +41,8 @@ class SISCore {
     renderWeaponList() {
         const container = document.getElementById('weapon-grid');
         const listHtml = this.state.intel.slice(0, 10).map(w => {
-            const dmg = Year8Engine.calculateStat(w['Damage'], this.state.prototypeMode);
-            return UI.components.weaponCard(w['Weapon'], dmg, this.state.prototypeMode);
+            const dmg = Year8Engine.calculateStat(w.baseDamage, this.state.prototypeMode);
+            return UI.components.weaponCard(w.name, dmg, this.state.prototypeMode);
         }).join('');
         
         UI.render('weapon-grid', listHtml);
