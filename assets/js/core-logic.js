@@ -71,11 +71,11 @@ export const SIS_CORE = {
      */
     mergeIntel(sheetData, overrides) {
         return sheetData.map(item => {
-            const override = overrides.find(o => o.id === item.id || o.name === item.Weapon);
+            const override = overrides.find(o => o.id === item.id || o.name === item.name);
             return {
                 ...item,
                 ...override,
-                is_prototype_compatible: item.Rarity === 'Exotic' || item.Named === 'Yes',
+                is_prototype_compatible: String(item.rarity ?? '').toLowerCase() === 'exotic' || item.isNamed === true,
                 last_synced: new Date().toISOString()
             };
         });
